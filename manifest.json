@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "Google Forms Expander",
+    "description": "chrome plugin which enlarges text windows in google forms",
+    "short_name": "Forms Expander",
+    "version": "0.1",
+    "permissions": ["declarativeContent"],
+    "page_action": {
+        "default_icon": {
+            "32": "icon.png"
+        },
+        "default_popup": "popup.html",
+        "default_title": "Google Forms Expander"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://docs.google.com/forms/*"],
+            "js": ["contentScript.js"]
+        }
+    ]
+}
