@@ -16,5 +16,8 @@ A simple chrome extension which enlarges single-line google forms textfields.
 - make the changes the extension makes toggleable
 
 ## Images
-![Before and after](Demo.jpg)
-- before and after
+![Before](before.png)
+- before
+
+![After](after.png)
+- after
