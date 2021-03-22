@@ -3,7 +3,10 @@ A simple chrome extension which enlarges single-line google forms textfields.
 
 ## Installation from source
 1. download the source
-2. go to `chrome://extensions` and enable developper mode
+    - click the big green button
+    - select [download zip](https://github.com/jarekt/google-forms-expander/archive/refs/heads/main.zip)
+    - extract the contents of the zip 
+2. go to [chrome://extensions](chrome://extensions) and enable developper mode
 3. click load unpacked and select the folder with the source
 
 ## FAQ
