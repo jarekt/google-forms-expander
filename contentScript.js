@@ -2,58 +2,27 @@ class TogglableWidth
 {
     constructor()
     {
-        this.pageInitial = "placeholderReee";
-        this.fieldInitial = "placeholderReee";
+        this.page = ["freebirdFormviewerViewCenteredContent", "width", "100%"];
+        this.pageBorder = ["freebirdFormviewerViewCenteredContent", "max-width", "98%"];
+        this.field = ["freebirdFormviewerComponentsQuestionTextTextInput", "width", "100%"];
     }
 
-    ToggleField()
+    applyValue([cssClass, field, value]) // returns previous value
     {
-        var textfields = document.getElementsByClassName("freebirdFormviewerComponentsQuestionTextTextInput");
-        var value = "100%";
-
-        if (this.fieldInitial == "placeholderReee")
+        console.log(cssClass);
+        console.log(field);
+        var elements = document.getElementsByClassName(cssClass);
+        var previousValue = elements[0].style[field];
+        Array.from(elements).forEach(function(element)
         {
-            this.fieldInitial = textfields[0].style.width;
-        }
-        else
-        {
-            value = this.fieldInitial;
-            this.fieldInitial = "placeholderReee";
-        }
-
-        Array.from(textfields).forEach(function(textfield)
-        {
-            textfield.style.width = value;
+            element.style[field] = value;
         });
 
-        return this;
-    }
-
-    TogglePage()
-    {
-        var pages = document.getElementsByClassName("freebirdFormviewerViewCenteredContent");
-        var value = "100%";
-
-        if (this.pageInitial == "placeholderReee")
-        {
-            this.pageInitial = pages[0].style.width;
-        }
-        else
-        {
-            value = this.pageInitial;
-            this.pageInitial = "placeholderReee";
-        }
-        
-
-        Array.from(pages).forEach(function(page)
-        {
-            page.style.width = value;
-            page.style['max-width'] = "98%";
-        });
-
-        return this;
+        return previousValue;
     }
 }
 
-toggler = new TogglableWidth;
-toggler.ToggleField().TogglePage();
+toggler = new TogglableWidth();
+toggler.applyValue(toggler.page);
+toggler.applyValue(toggler.pageBorder);
+toggler.applyValue(toggler.field);
