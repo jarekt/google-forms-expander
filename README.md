@@ -1,3 +1,6 @@
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+This project is unmaintained; it should, however, be very easily updateable (send a PR).
+
 # Google forms expander
 A simple chrome extension which enlarges single-line google forms textfields.
 
